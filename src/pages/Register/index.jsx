@@ -32,23 +32,23 @@ export default function RegisterPage() {
             <HStack>
               <Box>
                 <FormControl id="firstName" isRequired>
-                  <FormLabel>First Name</FormLabel>
+                  <FormLabel>Ismingiz</FormLabel>
                   <Input type="text" />
                 </FormControl>
               </Box>
               <Box>
-                <FormControl id="lastName">
-                  <FormLabel>Last Name</FormLabel>
+                <FormControl id="lastName" isRequired>
+                  <FormLabel>Familiyangiz</FormLabel>
                   <Input type="text" />
                 </FormControl>
               </Box>
             </HStack>
             <FormControl id="email" isRequired>
-              <FormLabel>Email address</FormLabel>
+              <FormLabel>Email manzilingiz</FormLabel>
               <Input type="email" />
             </FormControl>
             <FormControl id="password" isRequired>
-              <FormLabel>Password</FormLabel>
+              <FormLabel>Accountingiz uchun parol qo'ying</FormLabel>
               <InputGroup>
                 <Input type={showPassword ? "text" : "password"} />
                 <InputRightElement h={"full"}>
@@ -65,7 +65,7 @@ export default function RegisterPage() {
             </FormControl>
             <Stack spacing={10} pt={2}>
               <Button
-                loadingText="Submitting"
+                loadingText="Yuborilmoqda..."
                 size="lg"
                 bg={"blue.400"}
                 color={"white"}
@@ -73,12 +73,18 @@ export default function RegisterPage() {
                   bg: "blue.500",
                 }}
               >
-                Sign up
+                Ro'yxatdan o'tish
               </Button>
             </Stack>
             <Stack pt={6}>
               <Text align={"center"}>
-                Already a user? <Link color={"blue.400"}>Login</Link>
+                Accountiz bormi?{" "}
+                <Link
+                  color={"blue.400"}
+                  style={{ marginLeft: 20, textDecoration: "underline" }}
+                >
+                  Kirish
+                </Link>
               </Text>
             </Stack>
           </Stack>
