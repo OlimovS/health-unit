@@ -12,11 +12,14 @@ import {
   Text,
   useColorModeValue,
   Link,
+  useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { Formik, ErrorMessage, Form } from "formik";
 import * as Yup from "yup";
+import { IRegisterParams } from "../../api/types";
+import { registerUser } from "../../api/user";
 
 const REQUIRED_FIELD_MESSAGE = "Bu maydonni to'ldirish majburiy";
 
@@ -45,6 +48,29 @@ export default function RegisterPage() {
   const [showConfirmationPassword, setShowConfirmationPassword] =
     useState(false);
 
+  const toast = useToast();
+
+  const handleRegisterUser = async (userInfo: IRegisterParams) => {
+    const resp = await registerUser(userInfo).catch((err) => {
+      toast({
+        title: "Error sodir bo'ldi",
+        description: err.message,
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+      });
+    });
+
+    if (resp) {
+      toast({
+        title: "Muvaffaqiyatli",
+        description: "Akkount yaratildi",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+    }
+  };
   return (
     <Flex
       minH={"100vh"}
@@ -64,8 +90,15 @@ export default function RegisterPage() {
             }}
             validationSchema={SignupSchema}
             onSubmit={(values) => {
-              // same shape as initial values
-              console.log(values);
+              const userInfo = {
+                name: {
+                  first_name: values.firstName,
+                  last_name: values.lastName,
+                },
+                password: values.password,
+                email: values.email,
+              };
+              handleRegisterUser(userInfo);
             }}
           >
             {({ handleChange, handleBlur }) => {
@@ -180,6 +213,7 @@ export default function RegisterPage() {
                     </FormControl>
                     <Stack spacing={10} pt={2}>
                       <Button
+                        type="submit"
                         loadingText="Yuborilmoqda..."
                         size="lg"
                         bg={"blue.400"}
