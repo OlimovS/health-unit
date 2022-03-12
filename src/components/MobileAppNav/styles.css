@@ -1,0 +1,45 @@
+/* 
+  Reset lists
+*/
+
+ul,
+ul li,
+ul ul li {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  list-style-type: none;
+}
+
+/* My styles */
+
+.mobile__app__nav {
+  max-width: 300px;
+  width: 90%;
+  margin: auto;
+}
+
+.mobile__app__nav ul {
+  display: flex;
+  padding: 8px 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+ul li {
+  display: block;
+  /* padding: 8px; */
+  /* background-color: yellow; */
+  flex-grow: 1;
+}
+
+.icon__undertext {
+  text-align: center;
+}
+
+.icon__undertext svg {
+  margin: auto;
+}
+.icon__undertext p {
+  font-size: 12px;
+  margin: 0px;
+}

@@ -1,0 +1,16 @@
+.one__reja {
+  border: 1px solid black;
+  display: flex;
+}
+.one__reja .reja_content {
+  flex-grow: 1;
+}
+
+.one__reja h4,
+.one__reja p {
+  margin: 0px;
+}
+
+.one__reja p {
+  font-size: 12px;
+}
