@@ -1,8 +1,18 @@
 import { API_BASE_HOST } from "./constants/api";
 import axios from "axios";
 
+const getToken = () => {
+  return localStorage.getItem("token") || "";
+};
+
 const axiosIns = axios.create({
   baseURL: API_BASE_HOST,
+  headers: {
+    "Content-Type": "application/json",
+    "Acess-Control-Allow-Origin": "*",
+    Authorization: `Bearer ${getToken()}`,
+    Accept: "application/json",
+  },
 });
 
 axiosIns.interceptors.response.use(
