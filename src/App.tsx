@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import MobileAppNav from "./components/MobileAppNav";
 import ArticlesPage from "./pages/Articles";
@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import KlinakaWebsite from "./pages/Kliniks";
 import LoginPage from "./pages/Login";
 import OneKlinikPage from "./pages/OneKlinikPage";
+import ProfilePage from "./pages/ProfilePage";
 import RegisterPage from "./pages/Register";
 
 function App() {
@@ -23,11 +24,14 @@ function App() {
         <Route exact path="/login">
           <LoginPage />
         </Route>
-        <Route exact path="/articles">
+        <Route exact path="/blog/articles">
           <ArticlesPage />
         </Route>
-        <Route exact path="/events">
+        <Route exact path="/blog/events">
           <EventsPage />
+        </Route>
+        <Route exact path="/profile">
+          <ProfilePage />
         </Route>
         <Route exact path="/kliniks">
           <KlinakaWebsite />

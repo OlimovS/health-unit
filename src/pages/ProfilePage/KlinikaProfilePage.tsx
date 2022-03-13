@@ -1,25 +1,24 @@
 import React from "react";
 import { withRouter, RouteComponentProps } from "react-router-dom";
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { getKlinikById } from "../Kliniks";
 import { FaClinicMedical } from "react-icons/fa";
 import { AiFillPhone } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 import { FaHandHoldingMedical } from "react-icons/fa";
+
 // styles
 import "./styles.css";
 
 interface IProps extends RouteComponentProps {}
 
-const OneKlinikPage = (props: IProps) => {
+const KlinikProfilePage = (props: IProps) => {
   //   @ts-ignore
   const klinikId = props.match.params.klinikId;
   console.log("klinikId ", klinikId);
 
-  const klinik = getKlinikById(klinikId);
+  const klinik = getKlinikById(0);
 
-  if (!klinik) {
-    return <div>Klinika topilmadi</div>;
-  }
   return (
     <div>
       <div className="main__kilink__header d-md-flex justify-content-center">
@@ -65,8 +64,33 @@ const OneKlinikPage = (props: IProps) => {
           </p>
         </div>
       </div>
+      <div className="mx-auto mt-4" style={{ width: 500 }}>
+        <Tabs>
+          <TabList>
+            <Tab>Postlar</Tab>
+            <Tab>Meetinglar</Tab>
+            <Tab>Ilmiy ishlar</Tab>
+            <Tab>Sozlamalar</Tab>
+          </TabList>
+
+          <TabPanels>
+            <TabPanel>
+              <p>Postlar</p>
+            </TabPanel>
+            <TabPanel>
+              <p>Meetinglar</p>
+            </TabPanel>
+            <TabPanel>
+              <p>Ilmiy ishlar</p>
+            </TabPanel>
+            <TabPanel>
+              <p>Umumiy sozlamalar</p>
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
+      </div>
     </div>
   );
 };
 
-export default withRouter(OneKlinikPage);
+export default withRouter(KlinikProfilePage);
