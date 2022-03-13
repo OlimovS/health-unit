@@ -64,12 +64,11 @@ const KlinikProfilePage = (props: IProps) => {
           </p>
         </div>
       </div>
-      <div className="mx-auto mt-4" style={{ width: 500 }}>
+      <div className="mx-auto mt-4" style={{ maxWidth: 500 }}>
         <Tabs>
           <TabList>
             <Tab>Postlar</Tab>
             <Tab>Meetinglar</Tab>
-            <Tab>Ilmiy ishlar</Tab>
             <Tab>Sozlamalar</Tab>
           </TabList>
 

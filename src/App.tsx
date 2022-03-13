@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import MobileAppNav from "./components/MobileAppNav";
 import ArticlesPage from "./pages/Articles";
+import Blog from "./pages/Blog";
 import EventsPage from "./pages/Events";
 import Home from "./pages/Home";
 import KlinakaWebsite from "./pages/Kliniks";
@@ -24,12 +25,10 @@ function App() {
         <Route exact path="/login">
           <LoginPage />
         </Route>
-        <Route exact path="/blog/articles">
-          <ArticlesPage />
+        <Route path="/blog">
+          <Blog />
         </Route>
-        <Route exact path="/blog/events">
-          <EventsPage />
-        </Route>
+
         <Route exact path="/profile">
           <ProfilePage />
         </Route>

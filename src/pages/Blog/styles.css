@@ -1,0 +1,9 @@
+.header__image {
+  max-height: 40vh;
+  margin: auto;
+}
+
+.blog__header {
+  max-width: 600px;
+  margin: auto;
+}
