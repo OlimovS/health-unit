@@ -32,7 +32,7 @@ const KlinikaHomePage = () => {
         />
         <OneMake
           text="Meeting qo'shish"
-          icon={<BsFillCalendarDateFill size={25} color="green" />}
+          icon={<BsFillCalendarDateFill size={21} color="green" />}
         />
         <OneMake
           text="Maqola joylash"
