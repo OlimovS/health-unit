@@ -12,11 +12,19 @@ ul ul li {
 }
 
 /* My styles */
+.app__nav__wrapper {
+  width: 100%;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  z-index: 9999;
+}
 
 .mobile__app__nav {
   max-width: 300px;
   width: 90%;
   margin: auto;
+  background-color: white;
 }
 
 .mobile__app__nav ul {
