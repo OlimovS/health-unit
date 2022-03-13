@@ -1,14 +1,14 @@
 import React from "react";
 import { withRouter, RouteComponentProps } from "react-router-dom";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import { getKlinikById } from "../Kliniks";
+import { getKlinikById } from "../../Kliniks";
 import { FaClinicMedical } from "react-icons/fa";
 import { AiFillPhone } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 import { FaHandHoldingMedical } from "react-icons/fa";
 
 // styles
-import "./styles.css";
+// import "./styles.css";
 
 interface IProps extends RouteComponentProps {}
 
