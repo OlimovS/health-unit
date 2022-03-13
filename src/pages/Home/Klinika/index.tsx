@@ -25,7 +25,7 @@ const OneMake = ({ className = "", text, icon }: IOneMakeProps) => {
 const KlinikaHomePage = () => {
   return (
     <div>
-      <div className="make__wrapper">
+      <div className="make__wrapper d-sm-flex justify-content-center">
         <OneMake
           text="Post yozish"
           icon={<MdOutlinePostAdd size={25} color="green" />}
