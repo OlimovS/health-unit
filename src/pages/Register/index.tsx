@@ -20,8 +20,7 @@ import { Formik, ErrorMessage, Form } from "formik";
 import * as Yup from "yup";
 import { IRegisterParams } from "../../api/types";
 import { registerUser } from "../../api/user";
-
-const REQUIRED_FIELD_MESSAGE = "Bu maydonni to'ldirish majburiy";
+import { REQUIRED_FIELD_MESSAGE } from "../../constants";
 
 const SignupSchema = Yup.object().shape({
   firstName: Yup.string()

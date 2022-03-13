@@ -5,7 +5,9 @@ import MobileAppNav from "./components/MobileAppNav";
 import ArticlesPage from "./pages/Articles";
 import EventsPage from "./pages/Events";
 import Home from "./pages/Home";
+import KlinakaWebsite from "./pages/Kliniks";
 import LoginPage from "./pages/Login";
+import OneKlinikPage from "./pages/OneKlinikPage";
 import RegisterPage from "./pages/Register";
 
 function App() {
@@ -26,6 +28,12 @@ function App() {
         </Route>
         <Route exact path="/events">
           <EventsPage />
+        </Route>
+        <Route exact path="/kliniks">
+          <KlinakaWebsite />
+        </Route>
+        <Route exact path="/kliniks/:klinikId">
+          <OneKlinikPage />
         </Route>
       </Switch>
       <MobileAppNav />
