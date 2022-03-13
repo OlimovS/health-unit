@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const IconWithUnderText = ({ icon, text }) => {
+const IconWithUnderText = ({ icon, text, link }) => {
   return (
-    <div>
+    <Link to={link}>
       <div className="icon__undertext">
         {icon}
         <p>{text}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 

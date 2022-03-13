@@ -2,34 +2,33 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
 import { MdOutlineArticle } from "react-icons/md";
+import { FiUser } from "react-icons/fi";
 
 // styles
 import "./styles.css";
-import IconWithUnderText from "./IconWithUnderText";
+import NavItem from "./NavItem";
 
 const MobileAppNav = () => {
   return (
     <div>
-      <h1>MobileAppNav</h1>
-      <Link to="/">home</Link>
-      <Link to="/articles">articles</Link>
-      <Link to="/events">events</Link>
-      <Link to="/register">register</Link>
-      <Link to="/login">login</Link>
       <div>
         <nav className="mobile__app__nav">
           <ul>
             <li>
-              <IconWithUnderText icon={<AiOutlineHome />} text="Home" />
+              <NavItem icon={<AiOutlineHome />} text="Home" link="/" />
             </li>
             <li>
-              <IconWithUnderText icon={<MdOutlineArticle />} text="Maqolalar" />
+              <NavItem icon={<MdOutlineArticle />} text="Blog" link="/blog" />
             </li>
             <li>
-              <IconWithUnderText icon={<AiOutlineHome />} text="Home" />
+              <NavItem
+                icon={<AiOutlineHome />}
+                text="Klinikalar"
+                link="/kliniks"
+              />
             </li>
             <li>
-              <IconWithUnderText icon={<AiOutlineHome />} text="Home" />
+              <NavItem icon={<FiUser />} text="Profile" link="/profile" />
             </li>
           </ul>
         </nav>
