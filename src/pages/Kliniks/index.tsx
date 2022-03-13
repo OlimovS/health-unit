@@ -50,8 +50,8 @@ const KlinakaWebsite = (props: IProps) => {
   //   };
   return (
     <div>
-      <h1>KlinakaWebsite</h1>
-      <KlinikaSearch />
+      {/* <h1>KlinakaWebsite</h1> */}
+      {/* <KlinikaSearch /> */}
 
       <div className="d-flex flex-wrap justify-content-center">
         {klinikData.map((klinika, idx) => {
